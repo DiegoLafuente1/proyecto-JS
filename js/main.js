@@ -16,6 +16,8 @@ botonBuscar.addEventListener("click", () => {
         producto.nombre.toLowerCase().includes(terminoBusqueda)
     );
 
+console.log(terminoBusqueda);
+
     if (productosEncontrados.length === 0) {
         contenedorResultados.textContent = "No se encontraron productos.";
     } else {
