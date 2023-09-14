@@ -84,5 +84,13 @@ function filtrarProductos() {
     });
 }
 
-
 inputBusqueda.addEventListener("keyup", filtrarProductos);
+
+const botonComprar = document.getElementById("botonComprar");
+botonComprar.addEventListener("click", () => {
+    if (carrito.length === 0) {
+        alert("El carrito está vacío. ¡Agrega productos antes de comprar!");
+    } else {
+        alert("¡Compra realizada con éxito!");
+    }
+});
