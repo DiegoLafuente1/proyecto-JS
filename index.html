@@ -5,19 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda Fit</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
     
-    <input type="text" id="inputBusqueda" placeholder="Buscar producto">
-    <button id="btnBuscar">Buscar</button>
-    <div id="contenedorResultados"></div>
-    
-    <section id="section">
-        <div>
-            <p>buscar proteina o creatina</p>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand">Tienda Fit</a>
+          <form class="d-flex" role="search">
+            <input id="inputBusqueda" class="form-control me-2" type="search" aria-label="Search">
+            <button id="btnBuscar" class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
         </div>
-    </section>
+    </nav>
 
+   
+
+    <main>
+        <div class="producto">
+            <img src="imagenes/creatina 300.webp" alt="Creatina 350g">
+            <h3>Creatina 350g</h3>
+            <p>$1500</p>
+            <button data-precio="1500">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="imagenes/creatina 500.webp" alt="Creatina 500g">
+            <h3>Creatina 500g</h3>
+            <p>$1400</p>
+            <button data-precio="1400">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="imagenes/proteina chocolate.webp" alt="">
+            <h3>Proteina chocolate</h3>
+            <p>$2500</p>
+            <button data-precio="2500">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="imagenes/proteina galleta.webp" alt="">
+            <h3>Proteina galletas</h3>
+            <p>$2400</p>
+            <button data-precio="2400">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="imagenes/proteina vainilla.webp" alt="">
+            <h3>Proteina vainilla</h3>
+            <p>$2600</p>
+            <button data-precio="2600">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="imagenes/mani.webp" alt="">
+            <h3>Crema mani</h3>
+            <p>$800</p>
+            <button data-precio="800">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="imagenes/mancuernas 2kg.webp" alt="">
+            <h3>Mancuernas 2kg</h3>
+            <p>$1000</p>
+            <button data-precio="1000">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="imagenes/mancuernas 5kg.webp" alt="">
+            <h3>Mancuernas 5kg</h3>
+            <p>$1500</p>
+            <button data-precio="1500">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="imagenes/mancuernas 7kg.webp" alt="">
+            <h3>Mancuernas 7kg</h3>
+            <p>$2000</p>
+            <button data-precio="2000">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="imagenes/mancuernas 10kg.webp" alt="">
+            <h3>Mancuernas 10kg</h3>
+            <p>$2500</p>
+            <button data-precio="2500">Agregar al carrito</button>
+        </div>
+    </main>
+    
+    <h2 id="carritoTitulo">Carrito de Compras</h2>
+    <div id="carrito">
+        <ul id="lista-carrito">
+           
+        </ul>
+        <p>Total: $<span id="total">0.00</span></p>
+        <button>Comprar</button>
+    </div>
+
+
+    <footer>
+        <h3>Tienda Fit</h3>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
