@@ -43,6 +43,7 @@ function actualizarCarrito() {
 }
 
 const botonesComprar = document.querySelectorAll(".producto button");
+const mensajeConfirmacion = document.getElementById("mensaje-confirmacion");
 
 botonesComprar.forEach((boton) => {
     boton.addEventListener("click", () => {
@@ -50,6 +51,14 @@ botonesComprar.forEach((boton) => {
         const nombre = producto.querySelector("h3").textContent;
         const precio = parseFloat(boton.parentElement.querySelector("button").getAttribute("data-precio"));
         const productoExistente = carrito.find((item) => item.nombre === nombre);
+
+        mensajeConfirmacion.textContent = `Has agregado "${nombre}" al carrito.`;
+        mensajeConfirmacion.classList.remove("mensaje-oculto");
+
+        setTimeout(() => {
+            mensajeConfirmacion.classList.add("mensaje-oculto");
+        }, 3000); // 3000 milisegundos (3 segundos)
+
 
         if (productoExistente) {
             productoExistente.cantidad++;
@@ -62,6 +71,8 @@ botonesComprar.forEach((boton) => {
         }
 
         actualizarCarrito();
+
+      
 
         console.log("Producto seleccionado:", { nombre, precio });
         localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -94,3 +105,51 @@ botonComprar.addEventListener("click", () => {
         alert("¡Compra realizada con éxito!");
     }
 });
+
+const carritoIcono = document.getElementById('carrito-icono');
+const Carrito = document.getElementById('carrito');
+let carritoVisible = false;
+
+carritoIcono.addEventListener('click', () => {
+    if (!carritoVisible) {
+        Carrito.style.right = '0';
+        carritoVisible = true;
+    } else {
+        Carrito.style.right = '-300px'; // O el valor necesario para ocultar completamente el carrito
+        carritoVisible = false;
+    }
+});
+
+// Para cerrar el carrito si se hace clic fuera de él
+document.addEventListener('click', (event) => {
+    if (!Carrito.contains(event.target) && event.target !== carritoIcono) {
+        Carrito.style.right = '-300px'; // O el valor necesario para ocultar completamente el carrito
+        carritoVisible = false;
+    }
+});
+
+function actualizarCarrito() {
+    while (listaCarrito.firstChild) {
+        listaCarrito.removeChild(listaCarrito.firstChild);
+    }
+
+    let total = 0;
+
+    carrito.forEach((producto) => {
+        const { nombre, precio, cantidad } = producto;
+        total += precio * cantidad;
+
+        const itemCarrito = document.createElement("li");
+        itemCarrito.textContent = `${nombre} - Cantidad: ${cantidad} - Total: $${(precio * cantidad).toFixed(2)}`;
+        listaCarrito.appendChild(itemCarrito);
+    });
+    totalElement.textContent = total.toFixed(2);
+
+    // Actualiza el contador de productos en el carrito
+    const contadorCarrito = document.getElementById("carrito-cantidad");
+    contadorCarrito.textContent = carrito.length.toString();
+
+    console.log("Carrito actualizado:", carrito);
+    console.log("Total:", total.toFixed(2));
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}

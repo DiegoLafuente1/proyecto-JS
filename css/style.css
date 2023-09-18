@@ -27,19 +27,95 @@ main {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
 }
 
-#carritoTitulo {
-    display: flex;
-    justify-content: center;
+#inputBusqueda {
+    width: 300px;
+    padding: 5px 10px;
 }
 
+/* Estilos para el botón Buscar */
+#btnBuscar {
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 5px 10px; /* Espaciado interno */
+    transition: background-color 0.3s, color 0.3s; /* Transición de colores */
+}
+
+#btnBuscar:hover {
+    background-color: white; /* Cambio de fondo a blanco al pasar el mouse */
+    color: black; /* Cambio de texto a negro al pasar el mouse */
+}
+
+
+/* Estilos para el carrito de compras */
 #carrito {
-    display: grid;
-    justify-content: center
+    width: 300px; /* Ancho del carrito, ajusta según tus necesidades */
+    height: 100%; /* Altura del carrito, ajusta según tus necesidades */
+    position: fixed;
+    top: 0;
+    right: -300px; /* Inicialmente oculto a la derecha */
+    background-color: #fff; /* Color de fondo del carrito */
+    box-shadow: -3px 0px 5px rgba(0, 0, 0, 0.2); /* Sombra para el efecto de deslizamiento */
+    transition: right 0.3s ease-in-out; /* Transición para el deslizamiento */
+    z-index: 999; /* Asegura que el carrito esté sobre otros elementos */
 }
 
-#carrito p {
-    display: grid;
-    justify-content: center;
+.carrito-oculto {
+    right: -300px; /* Oculta el carrito a la derecha */
+}
+
+/* Estilos para el contenido del carrito */
+#lista-carrito {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-carrito li {
+    margin: 10px;
+}
+
+/* Estilos para el botón de comprar */
+#botonComprar {
+    display: block;
+    margin: 10px auto;
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#botonComprar:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+}
+
+
+
+.container-fluid img {
+    width: 100px;
+}
+
+/* Estilos para el mensaje de confirmación */
+#mensaje-confirmacion {
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Texto blanco */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.mensaje-oculto {
+    display: none;
 }
