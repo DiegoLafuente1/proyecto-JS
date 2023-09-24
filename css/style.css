@@ -1,8 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 30px;
+}
+
+.Titulo {
+    color: white;
 }
 
 .producto {
@@ -35,87 +50,104 @@ main {
 #inputBusqueda {
     width: 300px;
     padding: 5px 10px;
+    margin-left: 500px;
 }
 
-/* Estilos para el botón Buscar */
+
 #btnBuscar {
-    background-color: black; /* Fondo negro */
-    color: white; /* Texto blanco */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    padding: 5px 10px; /* Espaciado interno */
-    transition: background-color 0.3s, color 0.3s; /* Transición de colores */
+    background-color: black; 
+    color: white;
+    border: none; 
+    border-radius: 5px; 
+    padding: 5px 10px; 
+    transition: background-color 0.3s, color 0.3s; 
 }
 
 #btnBuscar:hover {
-    background-color: white; /* Cambio de fondo a blanco al pasar el mouse */
-    color: black; /* Cambio de texto a negro al pasar el mouse */
+    background-color: white; 
+    color: black;
 }
 
-
-/* Estilos para el carrito de compras */
 #carrito {
-    width: 300px; /* Ancho del carrito, ajusta según tus necesidades */
-    height: 100%; /* Altura del carrito, ajusta según tus necesidades */
     position: fixed;
     top: 0;
-    right: -300px; /* Inicialmente oculto a la derecha */
-    background-color: #fff; /* Color de fondo del carrito */
-    box-shadow: -3px 0px 5px rgba(0, 0, 0, 0.2); /* Sombra para el efecto de deslizamiento */
-    transition: right 0.3s ease-in-out; /* Transición para el deslizamiento */
-    z-index: 999; /* Asegura que el carrito esté sobre otros elementos */
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #f8f8f8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+#carrito-icono {
+    color: #fff;
 }
 
 .carrito-oculto {
-    right: -300px; /* Oculta el carrito a la derecha */
+    right: -300px; 
 }
 
-/* Estilos para el contenido del carrito */
+
 #lista-carrito {
-    list-style: none;
-    padding: 0;
+    padding: 10px;
 }
 
 #lista-carrito li {
-    margin: 10px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Estilos para el botón de comprar */
 #botonComprar {
     display: block;
     margin: 10px auto;
-    background-color: #007bff; /* Color de fondo del botón */
-    color: #fff; /* Color del texto del botón */
+    background-color: #007bff; 
+    color: #fff; 
     border: none;
     padding: 10px 20px;
     cursor: pointer;
 }
 
 #botonComprar:hover {
-    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+    background-color: #0056b3; 
 }
-
 
 
 .container-fluid img {
     width: 100px;
 }
 
-/* Estilos para el mensaje de confirmación */
-#mensaje-confirmacion {
-    background-color: #007bff; /* Color de fondo azul */
-    color: white; /* Texto blanco */
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    transition: opacity 0.3s ease-in-out;
-    opacity: 0;
+footer {
+    width: 100%;
+    margin-top: auto;
 }
 
-.mensaje-oculto {
-    display: none;
+#footer-nombre {
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    #inputBusqueda {
+        margin-left: 10px;
+        margin-top: 10px;
+        width: 100px;
+        height: 20px;
+    }
+    .Titulo {
+        margin-right: 100px;
+    }
+    .producto img {
+        height: 200px;
+    }
+    .producto {
+        width: 90%;
+        margin-left: 18px;
+    }
 }

@@ -4,45 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda Fit</title>
+    <link rel="icon" href="imagenes/logo 2.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
-
-    <div id="mensaje-confirmacion" class="mensaje-oculto">
-        Producto agregado al carrito.
-    </div>
     
    
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
-            <!-- Logo a la izquierda -->
-            <a class="navbar-brand" href="#"><img src="imagenes/logo 2.jpg" alt=""></a>
-    
-            <!-- Buscador centrado -->
-            <form class="d-flex flex-grow-1 justify-content-center" role="search">
+            <a class="navbar-brand" href="#"><img src="imagenes/logo 2.jpg" alt="Logo"></a>
+            <h1 class="Titulo">
+                Tienda Fit
+            </h1>
+            <form class="d-flex flex-grow-1" role="search">
                 <input id="inputBusqueda" class="form-control me-2" type="search" aria-label="Search">
                 <button id="btnBuscar" class="btn btn-outline-success" type="submit">Buscar</button>
             </form>
-    
-            <!-- Carrito a la derecha -->
             <div id="carrito-icono" class="ml-auto">
                 <i class="fas fa-shopping-cart"></i>
                 <span id="carrito-cantidad">0</span>
             </div>
             <div id="carrito" class="carrito-oculto">
-                <!-- Contenido del carrito de compras, como la lista de productos seleccionados y el total -->
                 <ul id="lista-carrito">
-                    <!-- Aquí se agregarán los productos seleccionados -->
                 </ul>
                 <p>Total: $<span id="total">0.00</span></p>
                 <button id="botonComprar">Comprar</button>
             </div>
         </div>
     </nav>
-    
-    
+
     <main>
         <div class="producto">
             <img src="imagenes/creatina 300.webp" alt="Creatina 350g">
@@ -104,29 +96,38 @@
             <p>$2500</p>
             <button data-precio="2500">Agregar al carrito</button>
         </div>
+        <div class="producto">
+            <img src="imagenes/banda elastica.webp" alt="">
+            <h3>Banda elastica</h3>
+            <p>$1000</p>
+            <button data-precio="1000">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="imagenes/cuerda saltar.webp" alt="">
+            <h3>Cuerda para saltar</h3>
+            <p>$2000</p>
+            <button data-precio="2000">Agregar al carrito</button>
+        </div>
     </main>
-    
-    
-    
 
-    <footer>
+    <footer class="bg-dark py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; 2023 Tienda Fit. Todos los derechos reservados.</p>
+                <div class="col-md-6 text-white">
+                    <p class="mb-0">&copy; 2023 Tienda Fit. Todos los derechos reservados.</p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 text-md-right">
                     <div class="redes-sociales">
-                        <a href="#" target="_blank"><img src="instagram.png" alt="Instagram"></a>
-                        <a href="#" target="_blank"><img src="whatsapp.png" alt="WhatsApp"></a>
-                        <a href="#" target="_blank"><img src="twitter.png" alt="Twitter"></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="text-white mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="https://www.whatsapp.com/" target="_blank" class="text-white mx-2"><i class="fab fa-whatsapp fa-2x"></i></a>
+                        <a href="https://twitter.com/home?lang=es" target="_blank" class="text-white mx-2"><i class="fab fa-twitter fa-2x"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
     
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
