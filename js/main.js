@@ -125,7 +125,7 @@ function toggleCarrito() {
 }
 
 botonBuscar.addEventListener("click", filtrarProductos);
-inputBusqueda.addEventListener("keyup", filtrarProductos);
+inputBusqueda.addEventListener("click", filtrarProductos);
 botonComprar.addEventListener("click", () => {
     if (carrito.length === 0) {
     } else {
