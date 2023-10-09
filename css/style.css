@@ -71,8 +71,8 @@ main {
 #carrito {
     position: fixed;
     top: 0;
-    right: -300px;
-    width: 300px;
+    right: -400px;
+    width: 400px;
     height: 100%;
     background-color: #f8f8f8;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -86,7 +86,7 @@ main {
 }
 
 .carrito-oculto {
-    right: -300px; 
+    right: -400px; 
 }
 
 
@@ -116,7 +116,54 @@ main {
     background-color: #0056b3; 
 }
 
+.boton-disminuir {
+    background-color: #FF5733; 
+    color: white; 
+    border: none; 
+    padding: 5px 10px; 
+    cursor: pointer; 
+    margin-right: 5px; 
+}
 
+.boton-disminuir:hover {
+    background-color: #FF3C1A;
+}
+
+
+.boton-aumentar {
+    background-color: #33FF57;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 5px; 
+    margin-right: 10px;
+}
+
+.boton-aumentar:hover {
+    background-color: #1AFF33;
+}
+
+
+.boton-eliminar {
+    background-color: #ff3b3b; 
+    color: #fff; 
+    border: none; 
+    padding: 5px 10px; 
+    margin-right: 5px; 
+    margin-left: 5px;
+    cursor: pointer; 
+    border-radius: 5px; 
+    width: 90px;
+  }
+  
+
+  .boton-eliminar:hover {
+    background-color: #ff0000; 
+    color: #fff; 
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  }
+  
 .container-fluid img {
     width: 100px;
 }
